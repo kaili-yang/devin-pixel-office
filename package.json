@@ -1,0 +1,17 @@
+{
+  "name": "devin-pixel-office",
+  "version": "0.1.0",
+  "description": "A pixel-art office where every Devin session is a little character: typing when Devin edits, at the terminal when it runs commands, raising a hand when it needs you. Live, local, zero dependencies.",
+  "license": "MIT",
+  "repository": { "type": "git", "url": "https://github.com/kaili-yang/devin-pixel-office.git" },
+  "homepage": "https://github.com/kaili-yang/devin-pixel-office#readme",
+  "engines": { "node": ">=22.13" },
+  "bin": { "devin-pixel-office": "bin/cli.js" },
+  "files": ["bin", "lib", "public"],
+  "scripts": {
+    "test": "node --test",
+    "start": "node bin/cli.js",
+    "demo": "node bin/cli.js --demo"
+  },
+  "keywords": ["devin", "pixel-art", "visualization", "ai-agents", "devin-cli", "dashboard"]
+}
