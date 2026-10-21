@@ -1,9 +1,8 @@
 # devin-pixel-office
 
-**你的每个 Devin 会话，都是像素办公室里的一个小人。** Devin 改代码时它在敲键盘，跑命令时屏幕滚绿字，
-查资料时在上网，需要你批准时**举手 + 红色感叹号**，干完活喝咖啡，闲太久就趴桌上睡觉。
-
-Every Devin session becomes a little pixel character in a tiny office, live:
+**Every Devin session becomes a little pixel character in a tiny office, live.** It types when Devin edits,
+watches green text scroll when Devin runs commands, browses when Devin researches, **raises a hand with a red `!`**
+when Devin needs your approval, sips coffee when it is done, and falls asleep on the desk when idle too long.
 
 ![Devin Pixel Office](docs/demo.png)
 

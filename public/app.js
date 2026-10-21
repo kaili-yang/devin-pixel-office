@@ -5,10 +5,7 @@
 (() => {
   const W = 320;
   const H = 200;
-  const ZH = /^zh/i.test(navigator.language || '');
-  const T = ZH
-    ? { thinking: '思考中', typing: '写代码', terminal: '跑命令', reading: '读代码', browsing: '上网查资料', delegating: '派活给子代理', planning: '做计划', asking: '有问题问你', waiting: '等你批准', tool: '调用工具', done: '完成', sleeping: '摸鱼中', summary: (n, w) => `${n} 个会话${w ? ` · ${w} 个在等你` : ''}`, empty: '最近 2 小时没有 Devin 会话。开一个吧！', notifyOn: '通知：开', notifyOff: '通知：关', more: (n) => `还有 ${n} 个`, reconnect: '重新连接中…', demo: '演示模式', error: '报错了' }
-    : { thinking: 'Thinking', typing: 'Editing', terminal: 'Running a command', reading: 'Reading code', browsing: 'Browsing the web', delegating: 'Delegating', planning: 'Planning', asking: 'Has a question', waiting: 'Needs your approval', tool: 'Using a tool', done: 'Done', sleeping: 'Idle', summary: (n, w) => `${n} session${n === 1 ? '' : 's'}${w ? ` · ${w} waiting for you` : ''}`, empty: 'No Devin sessions in the last 2 hours. Start one!', notifyOn: 'Notify: on', notifyOff: 'Notify: off', more: (n) => `+${n} more`, reconnect: 'reconnecting…', demo: 'demo', error: 'hit an error' };
+  const T = { thinking: 'Thinking', typing: 'Editing', terminal: 'Running a command', reading: 'Reading code', browsing: 'Browsing the web', delegating: 'Delegating', planning: 'Planning', asking: 'Has a question', waiting: 'Needs your approval', tool: 'Using a tool', done: 'Done', sleeping: 'Idle', summary: (n, w) => `${n} session${n === 1 ? '' : 's'}${w ? ` · ${w} waiting for you` : ''}`, empty: 'No Devin sessions in the last 2 hours. Start one!', notifyOn: 'Notify: on', notifyOff: 'Notify: off', more: (n) => `+${n} more`, reconnect: 'reconnecting…', demo: 'demo', error: 'hit an error' };
 
   const stage = document.getElementById('stage');
   const px = document.getElementById('px');
