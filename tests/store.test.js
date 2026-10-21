@@ -39,6 +39,8 @@ test('toEntry keeps prompts, replies and tool results, flags failed commands', (
   assert.equal(toEntry('nope', 1), null);
   const e = toEntry(JSON.stringify({ message_id: 'm', role: 'tool', tool_call_id: 'c', content: 'boom\nExit code: 1' }), 5);
   assert.deepEqual([e.role, e.ts, e.error], ['tool', 5000, true]);
+  const precise = toEntry(JSON.stringify({ role: 'assistant', metadata: { created_at: '2026-10-21T17:00:00.250Z' } }), 5);
+  assert.equal(precise.ts, Date.parse('2026-10-21T17:00:00.250Z'));
 });
 
 test('StorePoller loads recent sessions and follows new rows', (t) => {
