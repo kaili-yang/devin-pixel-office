@@ -43,13 +43,13 @@ test('toEntry keeps prompts, replies and tool results, flags failed commands', (
 
 test('StorePoller loads recent sessions and follows new rows', (t) => {
   const s = makeStore();
-  t.after(s.close);
   s.session('recent', 'Fix bug');
   s.session('ancient', 'Old', 10 * 3600);
   s.msg('recent', { message_id: 'u1', role: 'user', content: 'fix it', metadata: { is_user_input: true } }, 5);
   s.msg('ancient', { message_id: 'u0', role: 'user', content: 'old', metadata: { is_user_input: true } }, 10 * 3600);
   const p = new StorePoller({ file: s.file }).open();
-  t.after(() => p.close());
+  // close the reader before deleting the file (Windows refuses to delete an open database)
+  t.after(() => { p.close(); s.close(); });
   assert.deepEqual([...p.sessions.keys()], ['recent']);
   assert.equal(p.sessions.get('recent').title, 'Fix bug');
 
